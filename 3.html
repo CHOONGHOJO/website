@@ -1,48 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>WEB1 - JavaScript</title>
     <meta charset="utf-8">
-<script>
-var Links = {
-    setColor:function(color) {
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while (i < alist.length){
-        alist[i].style.color = color;
-        i = i + 1 ;
-        }    
-    }
-}
-
-var Body = {
-    setColor : function (color) {
-        document.querySelector('body').style.color = color;
-     },
-    setBackroundColor : function (color) {
-        document.querySelector('body').style.backgroundColor = color;
-    }
-}
-
-function nightDayHandler (self) {
-    var target = document.querySelector('body');
-    if (self.value === 'night') {
-        Body.setBackroundColor ('black');
-        Body.setColor ('white');
-        self.value = 'day';
-
-        Links.setColor('powderblue');
-        
-    } else {
-        Body.setBackroundColor ('white');
-        Body.setColor ('black');
-        self.value = 'night';
-
-        Links.setColor('blue');
-    }
- }
-</script>
+    <script src="colors.js"></script>
 </head>
 
 <body>
@@ -50,34 +11,6 @@ function nightDayHandler (self) {
 
     <input type="button" value="night" onclick="
         nightDayHandler (this);
-    ">
-
-    
-    <input type="button" value="night1" onclick="
-    if (document.querySelector('body').dataset.mode === 'night1') {
-        document.querySelector('body').style.backgroundColor='black';
-        document.querySelector('body').style.color='white';
-        document.querySelector('body').dataset.mode = 'day1'
-        this.value = 'day1';
-    } else {
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='black';
-        document.querySelector('body').dataset.mode = 'night1'
-        this.value = 'night1'; 
-    }
-    ">
-
-    
-    <input id="night_day" type="button" value="new_night" onclick="
-    if (document.querySelector('#night_day').value === 'new_night') {
-        document.querySelector('body').style.backgroundColor='black';
-        document.querySelector('body').style.color='white';
-        document.querySelector('#night_day').value = 'new_day'
-    } else {
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='black';
-        document.querySelector('#night_day').value = 'new_night'
-    }
     ">
 
     <ol>
